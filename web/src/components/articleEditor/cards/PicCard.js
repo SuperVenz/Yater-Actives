@@ -4,9 +4,23 @@ import BasicEditor from "../../ultilitys/BasicEditor";
 import PortablePic from "../../ultilitys/PortablePic";
 import { useStaticQuery, graphql } from "gatsby";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+`;
 // Main Card Wrapper
 const PicCardWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 10px 5%;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
   /* keep this */
   /* Font Options */
   font-size: ${(props) =>

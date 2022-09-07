@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import PortablePic from "./PortablePic";
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  margin: 10px 0px;
+`;
 const StyledLink = styled.a`
   height: 100%;
   background-color: inherit;
+  cursor: pointer;
 `;
 const Label = styled.p``;
 function SocialHandle({ data }) {
@@ -21,7 +24,7 @@ function SocialHandle({ data }) {
             {socialHandle.icon ? (
               <PortablePic data={socialHandle.icon} />
             ) : null}
-            <Label>{socialHandle.label}</Label>
+            <Label>{socialHandle.label ? socialHandle.label : ""}</Label>
           </StyledLink>
         );
       })}

@@ -39,9 +39,7 @@ const Editor = styled(PortableText)`
   h5 {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.headerColor
-        ? props.customtheme.headerColor.hex
-        : "inherit"};
+      props.customtheme.headerColor ? props.customtheme.headerColor.hex : ""};
   }
   /* Font */
   ol,
@@ -51,15 +49,13 @@ const Editor = styled(PortableText)`
   span {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.fontColor
-        ? props.customtheme.fontColor.hex
-        : "inherit"};
+      props.customtheme.fontColor ? props.customtheme.fontColor.hex : ""};
   }
 `;
 function ArticleEditor({ data }) {
   return (
     <Editor
-      customtheme={data.theme ? data.theme : "inherit"}
+      customtheme={data.theme ? data.theme : ""}
       content={data.textContent}
       serializers={{
         backgroundCards: (props) => <BackgroundCard data={props} />,

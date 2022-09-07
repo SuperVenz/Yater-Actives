@@ -51,6 +51,7 @@ const Wrapper = styled.div`
 `;
 const Content = styled.div`
   display: flex;
+  flex-flow: column nowrap;
   @media only screen and (min-width: 600px) {
     flex-flow: row nowrap;
     flex-direction: ${(props) => (props.invert ? "row-reverse" : "row")};
