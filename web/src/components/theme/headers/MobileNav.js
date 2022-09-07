@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
 const Wrapper = styled.div`
-  margin-right: 16px;
-  border-bottom: 1px solid #000;
+  position: relative;
   @media only screen and (min-width: 900px) {
     display: none;
   }
@@ -13,13 +10,10 @@ const Active = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  text-align: center;
   padding-top: 24px;
-  position: fixed;
-  left: 0px;
-  z-index: 55;
-  height: 100%;
-  width: 100%;
-
+  width: 100vw;
+  height: 100vh;
   /* Background Color */
   background-color: ${(props) =>
     props.customtheme.backgroundColor
@@ -61,28 +55,11 @@ const Active = styled.div`
   }
   display: ${(props) => (props.active ? "display" : "none")};
 `;
-const MobileIcon = styled(GatsbyImage)`
-height: auto;
-width: 20%;
-display: flex;
-margin-left: auto;
-`
 
-const MobileIconWrapper = styled.div``;
-function MobileNav({ image, children, theme }) {
-  const [active, setActive] = useState(false);
+function MobileNav({ children, theme, active }) {
   return (
     <Wrapper>
-      <MobileIconWrapper
-        onClick={() => setActive(!active)}
-        onKeyDown={() => setActive(!active)}
-      >
-        <MobileIcon
-          image={image.picData.asset.gatsbyImageData}
-          alt={image.alt}
-        />
-      </MobileIconWrapper>
-      <Active customtheme={theme ? theme : ""} active={active}>
+      <Active customtheme={theme ? theme : "inherit"} active={active}>
         {children}
       </Active>
     </Wrapper>
