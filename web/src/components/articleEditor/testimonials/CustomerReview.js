@@ -9,45 +9,45 @@ const CustomerReviewWrapper = styled.div`
   /* keep this */
   /* Font Options */
   font-size: ${(props) =>
-    props.customtheme.font ? `${props.customtheme.font.mobile}px` : "inherit"};
+    props.customtheme.font ? `${props.customtheme.font.mobile}px` : ""};
   color: ${(props) =>
-    props.customtheme.font ? props.customtheme.font.fontColor.hex : "inherit"};
+    props.customtheme.font ? props.customtheme.font.fontColor.hex : ""};
   /* Background Color */
   background-color: ${(props) =>
     props.customtheme.backgroundColor
       ? props.customtheme.backgroundColor.hex
-      : "inherit"};
+      : ""};
   /*Hover Color */
   &:hover {
     background-color: ${(props) =>
       props.customtheme.hoverTheme
         ? props.customtheme.hoverTheme.hoverBackground.hex
-        : "inherit"};
+        : ""};
     color: ${(props) =>
       props.customtheme.hoverTheme
         ? props.customtheme.hoverTheme.fontHover.hex
-        : "inherit"};
+        : ""};
   }
 
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
 
   /* Tablet */
   @media only screen and (min-width: 600px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
-        : "inherit"};
+        : ""};
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.desktop}px`
-        : "inherit"};
+        : ""};
   }
 `;
 const PersonName = styled.h3``;
@@ -70,7 +70,7 @@ function CustomerReview({ data }) {
             customtheme={
               sanity.sanityCustomerReviewTheme
                 ? sanity.sanityCustomerReviewTheme._rawTheme
-                : "inherit"
+                : ""
             }
           >
             <PersonName>{customerReview.personsName}</PersonName>

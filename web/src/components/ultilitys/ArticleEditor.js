@@ -29,7 +29,7 @@ const Editor = styled(PortableText)`
   background: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
 
   /* Headers */
   h1,
@@ -41,7 +41,7 @@ const Editor = styled(PortableText)`
     color: ${(props) =>
       props.customtheme.headerColor
         ? props.customtheme.headerColor.hex
-        : "inherit"};
+        : ""};
   }
   /* Font */
   ol,
@@ -53,13 +53,13 @@ const Editor = styled(PortableText)`
     color: ${(props) =>
       props.customtheme.fontColor
         ? props.customtheme.fontColor.hex
-        : "inherit"};
+        : ""};
   }
 `;
 function ArticleEditor({ data }) {
   return (
     <Editor
-      customtheme={data.theme ? data.theme : "inherit"}
+      customtheme={data.theme ? data.theme : ""}
       content={data.textContent}
       serializers={{
         backgroundCards: (props) => <BackgroundCard data={props} />,
