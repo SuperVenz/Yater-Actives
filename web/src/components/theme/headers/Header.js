@@ -4,12 +4,18 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import MobileNav from "./MobileNav";
+import { useState } from "react";
+
 const Wrapper = styled.nav`
+  position: sticky;
+  top: 0px;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: flex-end;
   align-items: center;
-  padding: 6px 0px;
+  z-index: 55;
+  padding-top: 10px;
+  padding-bottom: 8px;
   /* Font Options */
   font-size: ${(props) =>
     props.customtheme.fontLabel
@@ -24,9 +30,9 @@ const Wrapper = styled.nav`
   background-color: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : "white"};
   /* Border */
-  border: ${(props) =>
+  border-bottom: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
       : "inherit"};
@@ -60,7 +66,16 @@ const LinkWrapper = styled.div`
 const MobileLinkWrapper = styled.div`
   padding-left: 16px;
 `;
+const MobileIconWrapper = styled.div``;
+
+const MobileIcon = styled(GatsbyImage)`
+  z-index: 49;
+  margin-right: 16px;
+`;
+
 function Header() {
+  const [active, setActive] = useState(false);
+
   const data = useStaticQuery(graphql`
     {
       sanityHeaderMain {
@@ -92,7 +107,11 @@ function Header() {
   `);
   return (
     <Wrapper
-      customtheme={data.sanityHeaderMain ? data.sanityHeaderMain : "inherit"}
+      customtheme={
+        data.sanityHeaderMain._rawTheme.theme
+          ? data.sanityHeaderMain._rawTheme.theme
+          : "inherit"
+      }
     >
       <Logo>
         {data.sanityHeaderMain.logo ? (
@@ -112,10 +131,16 @@ function Header() {
           );
         })}
       </LinkWrapper>
-      <MobileNav
-        image={data.sanityHeaderMain.mobileIcon}
-        theme={data.sanityHeaderMain._rawMobileTheme}
+      <MobileIconWrapper
+        onClick={() => setActive(!active)}
+        onKeyDown={() => setActive(!active)}
       >
+        <MobileIcon
+          image={data.sanityHeaderMain.mobileIcon.picData.asset.gatsbyImageData}
+          alt={data.sanityHeaderMain.mobileIcon.alt}
+        />
+      </MobileIconWrapper>
+      <MobileNav theme={data.sanityHeaderMain._rawMobileTheme} active={active}>
         <MobileLinkWrapper>
           {data.sanityHeaderMain.links.map((link, i) => {
             return (
