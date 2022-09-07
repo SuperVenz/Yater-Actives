@@ -18,7 +18,7 @@ const Editor = styled(PortableText)`
   background: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
   z-index: -2;
   /* Headers */
   h1,
@@ -28,9 +28,7 @@ const Editor = styled(PortableText)`
   h5 {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.headerColor
-        ? props.customtheme.headerColor.hex
-        : "inherit"};
+      props.customtheme.headerColor ? props.customtheme.headerColor.hex : ""};
     padding-top: 12px;
   }
   /* Font */
@@ -41,17 +39,15 @@ const Editor = styled(PortableText)`
   span {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.fontColor
-        ? props.customtheme.fontColor.hex
-        : "inherit"};
+      props.customtheme.fontColor ? props.customtheme.fontColor.hex : ""};
   }
 `;
 function LayoutEditor({ data }) {
   return (
     <>
       <Editor
-        customtheme={data._rawTheme ? data._rawTheme : "inherit"}
-        projectId="j5dplla1"
+        customtheme={data._rawTheme ? data._rawTheme : ""}
+        projectId="ox2k64am"
         dataset="production"
         content={data._rawLayoutContent}
         serializers={{

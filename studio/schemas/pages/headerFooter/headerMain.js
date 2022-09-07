@@ -21,6 +21,11 @@ export default {
       type: "pic",
     },
     {
+      name: "companyName",
+      title: "Company Name",
+      type: "string",
+    },
+    {
       name: "links",
       title: "links",
       type: "array",

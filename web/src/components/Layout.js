@@ -9,6 +9,7 @@ const Css = createGlobalStyle`
 h1{
      color: ${(props) => props.theme._rawH1Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
    @media only screen and (min-width: 600px) {
      font-size:${(props) => `${props.theme._rawH1Theme.tablet}px`};
@@ -34,7 +35,7 @@ h2{
 }
 h3{
   color: ${(props) => props.theme._rawH3Theme.fontColor.hex};   
-     font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};
+     font-size:${(props) => `${props.theme._rawH3Theme.mobile}px`};
 
    @media only screen and (min-width: 600px) {
      font-size:${(props) => `${props.theme._rawH3Theme.tablet}px`};
@@ -47,7 +48,7 @@ h3{
 }
 h4{
    color: ${(props) => props.theme._rawH4Theme.fontColor.hex};   
-     font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};
+     font-size:${(props) => `${props.theme._rawH4Theme.mobile}px`};
 
    @media only screen and (min-width: 600px) {
      font-size:${(props) => `${props.theme._rawH4Theme.tablet}px`};
@@ -60,7 +61,7 @@ h4{
 }
 p,span{
 color: ${(props) => props.theme._rawTextTheme.fontColor.hex};   
-     font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};
+     font-size:${(props) => `${props.theme._rawTextTheme.mobile}px`};
 
    @media only screen and (min-width: 600px) {
      font-size:${(props) => `${props.theme._rawTextTheme.tablet}px`};
@@ -94,7 +95,7 @@ function Layout({ page }) {
       theme={
         data.sanitySiteTheme.siteTheme
           ? data.sanitySiteTheme.siteTheme
-          : "inherit"
+          : ""
       }
     >
       <Reset />

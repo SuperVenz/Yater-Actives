@@ -12,32 +12,32 @@ const FormWrapper = styled.form`
   background-color: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
 `;
 const Label = styled.label`
   /* Font Options */
   font-size: ${(props) =>
-    props.customtheme.font ? `${props.customtheme.font.mobile}px` : "inherit"};
+    props.customtheme.font ? `${props.customtheme.font.mobile}px` : ""};
   color: ${(props) =>
-    props.customtheme.font ? props.customtheme.font.fontColor.hex : "inherit"};
+    props.customtheme.font ? props.customtheme.font.fontColor.hex : ""};
   /* Tablet */
   @media only screen and (min-width: 600px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
-        : "inherit"};
+        : ""};
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.desktop}px`
-        : "inherit"};
+        : ""};
   }
 `;
 const Input = styled.input`
@@ -45,29 +45,29 @@ const Input = styled.input`
   font-size: ${(props) =>
     props.customtheme.fontLabel
       ? `${props.customtheme.fontLabel.mobile}px`
-      : "inherit"};
+      : ""};
   color: ${(props) =>
     props.customtheme.fontLabel
       ? props.customtheme.fontLabel.fontColor.hex
-      : "inherit"};
+      : ""};
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
   /* Tablet */
   @media only screen and (min-width: 600px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
-        : "inherit"};
+        : ""};
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.desktop}px`
-        : "inherit"};
+        : ""};
   }
 `;
 const Textarea = styled.textarea`
@@ -75,29 +75,29 @@ const Textarea = styled.textarea`
   font-size: ${(props) =>
     props.customtheme.fontLabel
       ? `${props.customtheme.fontLabel.mobile}px`
-      : "inherit"};
+      : ""};
   color: ${(props) =>
     props.customtheme.fontLabel
       ? props.customtheme.fontLabel.fontColor.hex
-      : "inherit"};
+      : ""};
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
   /* Tablet */
   @media only screen and (min-width: 600px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
-        : "inherit"};
+        : ""};
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.desktop}px`
-        : "inherit"};
+        : ""};
   }
 `;
 
@@ -134,16 +134,16 @@ function FormAlt({ data }) {
   return (
     <Wrapper data={data.pic}>
       <BasicEditor data={data.textEditor} />
-      <FormWrapper customtheme={data.theme ? data.theme : "inherit"}>
+      <FormWrapper customtheme={data.theme ? data.theme : ""}>
         <input name="contact" value="Netlify Rocks" type="hidden" />
         <input type="hidden" name="bot-field" />
         <Label
-          customtheme={data.theme ? data.theme.formTheme : "inherit"}
+          customtheme={data.theme ? data.theme.formTheme : ""}
           htmlFor="FirstName"
         >
           <h4>First Name</h4>
           <Input
-            customtheme={data.theme ? data.theme.formTheme : "inherit"}
+            customtheme={data.theme ? data.theme.formTheme : ""}
             required
             type="text"
             name="firstName"
@@ -153,12 +153,12 @@ function FormAlt({ data }) {
           />
         </Label>
         <Label
-          customtheme={data.theme ? data.theme.formTheme : "inherit"}
+          customtheme={data.theme ? data.theme.formTheme : ""}
           htmlFor="Email"
         >
           <h4>Email</h4>
           <Input
-            customtheme={data.theme ? data.theme.formTheme : "inherit"}
+            customtheme={data.theme ? data.theme.formTheme : ""}
             required
             type="text"
             name="email"
@@ -168,12 +168,12 @@ function FormAlt({ data }) {
           />
         </Label>
         <Label
-          customtheme={data.theme ? data.theme.formTheme : "inherit"}
+          customtheme={data.theme ? data.theme.formTheme : ""}
           htmlFor="telephone"
         >
           <h4>Telephone</h4>
           <Input
-            customtheme={data.theme ? data.theme.formTheme : "inherit"}
+            customtheme={data.theme ? data.theme.formTheme : ""}
             required
             type="tel"
             name="telephone"
@@ -183,12 +183,12 @@ function FormAlt({ data }) {
           />
         </Label>
         <Label
-          customtheme={data.theme ? data.theme.formTheme : "inherit"}
+          customtheme={data.theme ? data.theme.formTheme : ""}
           htmlFor="description"
         >
           <h4>How can we help</h4>
           <Textarea
-            customtheme={data.theme ? data.theme.formTheme : "inherit"}
+            customtheme={data.theme ? data.theme.formTheme : ""}
             name="description"
             rows="4"
             required

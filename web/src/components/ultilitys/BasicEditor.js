@@ -11,7 +11,7 @@ const Editor = styled(PortableText)`
   background: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
 
   /* Headers */
   h1,
@@ -23,7 +23,7 @@ const Editor = styled(PortableText)`
     color: ${(props) =>
       props.customtheme.headerColor
         ? props.customtheme.headerColor.hexss
-        : "inherit"}!important;
+        : ""}!important;
   }
   /* Font */
   ol,
@@ -35,13 +35,13 @@ const Editor = styled(PortableText)`
     color: ${(props) =>
       props.customtheme.fontColor
         ? props.customtheme.fontColor.hex
-        : "inherit"}!important;
+        : ""}!important;
   }
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
 `;
 function BasicEditor({ data }) {
   return (

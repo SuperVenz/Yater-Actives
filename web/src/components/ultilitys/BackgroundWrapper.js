@@ -5,7 +5,6 @@ import { convertToBgImage } from "gbimage-bridge";
 import { getImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 const Wrapper = styled(BackgroundImage)`
-  z-index: 50;
 `;
 const sanityConfig = { projectId: "j5dplla1", dataset: "production" };
 // Wrap this component over whatever you want to background

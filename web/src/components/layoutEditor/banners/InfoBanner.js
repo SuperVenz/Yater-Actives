@@ -7,17 +7,17 @@ const Wrapper = styled(BackgroundWrapper)`
   background-color: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
 `;
 function InfoBanner({ data }) {
   return (
     <Wrapper
-      customtheme={data.theme ? data.theme : "inherit"}
+      customtheme={data.theme ? data.theme : ""}
       data={data.backgroundPic}
     >
       <BasicEditor data={data.textEditor} />

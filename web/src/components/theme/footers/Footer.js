@@ -8,34 +8,34 @@ const Wrapper = styled.div`
   font-size: ${(props) =>
     props.customtheme.fontLabel
       ? `${props.customtheme.fontLabel.mobile}px`
-      : "inherit"};
+      : ""};
   color: ${(props) =>
     props.customtheme.fontLabel
       ? props.customtheme.fontLabel.fontColor.hex
-      : "inherit"};
+      : ""};
   /* Background Color */
   background-color: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
-      : "inherit"};
+      : ""};
   /* Border */
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
   /* Tablet */
   @media only screen and (min-width: 600px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
-        : "inherit"};
+        : ""};
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.desktop}px`
-        : "inherit"};
+        : ""};
   }
 `;
 const CompanyInfo = styled.div``;
@@ -85,7 +85,7 @@ function Footer(props) {
   `);
   return (
     <Wrapper
-      customtheme={data.sanityFooterMain ? data.sanityFooterMain : "inherit"}
+      customtheme={data.sanityFooterMain ? data.sanityFooterMain : ""}
     >
       <CompanyInfo>
         <h3>{data.sanitySiteInfo.companyName}</h3>

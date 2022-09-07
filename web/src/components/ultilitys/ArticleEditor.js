@@ -39,9 +39,7 @@ const Editor = styled(PortableText)`
   h5 {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.headerColor
-        ? props.customtheme.headerColor.hex
-        : ""};
+      props.customtheme.headerColor ? props.customtheme.headerColor.hex : ""};
   }
   /* Font */
   ol,
@@ -51,9 +49,7 @@ const Editor = styled(PortableText)`
   span {
     /* Color Options */
     color: ${(props) =>
-      props.customtheme.fontColor
-        ? props.customtheme.fontColor.hex
-        : ""};
+      props.customtheme.fontColor ? props.customtheme.fontColor.hex : ""};
   }
 `;
 function ArticleEditor({ data }) {

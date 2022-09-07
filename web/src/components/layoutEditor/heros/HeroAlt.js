@@ -7,13 +7,13 @@ const Wrapper = styled(BackgroundWrapper)`
   border: ${(props) =>
     props.customtheme.borderOptions
       ? `${props.customtheme.borderOptions.borderWeight}px solid ${props.customtheme.borderOptions.borderColor.hex}`
-      : "inherit"};
+      : ""};
 `;
 
 function HeroAlt({ data }) {
   return (
     <Wrapper
-      customtheme={data.theme ? data.theme : "inherit"}
+      customtheme={data.theme ? data.theme : ""}
       data={data.backgroundPic}
     >
       <BasicEditor data={data.textEditor} />
