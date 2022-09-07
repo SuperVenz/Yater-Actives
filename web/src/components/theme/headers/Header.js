@@ -120,7 +120,11 @@ function Header() {
             alt={data.sanityHeaderMain.logo.alt}
           />
         ) : null}
-        <h3>{data.sanityHeaderMain.companyName}</h3>
+        <h3>
+          {data.sanityHeaderMain.companyName
+            ? data.sanityHeaderMain.companyName
+            : ""}
+        </h3>
       </Logo>
       <LinkWrapper>
         {data.sanityHeaderMain.links.map((link, i) => {
