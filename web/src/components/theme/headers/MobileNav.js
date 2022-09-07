@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
 const Wrapper = styled.div`
   position: relative;
   @media only screen and (min-width: 900px) {
@@ -57,8 +55,7 @@ const Active = styled.div`
   }
   display: ${(props) => (props.active ? "display" : "none")};
 `;
-const MobileIcon = styled(GatsbyImage)``;
-const MobileIconWrapper = styled.div``;
+
 function MobileNav({ children, theme, active }) {
   return (
     <Wrapper>
