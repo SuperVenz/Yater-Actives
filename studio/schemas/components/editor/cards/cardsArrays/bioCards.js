@@ -1,7 +1,7 @@
 export default {
   name: "bioCards",
   title: "Bio cards",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "cardArray",

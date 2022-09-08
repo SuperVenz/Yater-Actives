@@ -15,7 +15,10 @@ const Wrapper = styled.nav`
   align-items: center;
   z-index: 55;
   padding-top: 10px;
+  width: auto;
   padding-bottom: 8px;
+
+
   /* Font Options */
   font-size: ${(props) =>
     props.customtheme.fontLabel
@@ -59,6 +62,9 @@ const Logo = styled.div`
   justify-content: center;
   margin-right: auto;
   padding-left: 16px;
+  
+
+
 `;
 const LinkWrapper = styled.div`
   display: none;
@@ -66,12 +72,20 @@ const LinkWrapper = styled.div`
 const MobileLinkWrapper = styled.div`
   padding-left: 16px;
 `;
-const MobileIconWrapper = styled.div``;
+const MobileIconWrapper = styled.div`
+`;
 
 const MobileIcon = styled(GatsbyImage)`
   z-index: 49;
   margin-right: 16px;
+  height: 50px;
+width: 50px;
+  
 `;
+
+const LogoImg = styled(GatsbyImage)`  width: 100px;
+  height: 100px;`
+
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -105,12 +119,14 @@ function Header() {
       }
     }
   `);
+  
+
   return (
     <Wrapper
       customtheme={
-        data.sanityHeaderMain._rawTheme.theme
-          ? data.sanityHeaderMain._rawTheme.theme
-          : "inherit"
+        data.sanityHeaderMain._rawTheme
+          ? data.sanityHeaderMain._rawTheme
+          : ""
       }
     >
       <Logo>

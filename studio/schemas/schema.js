@@ -119,6 +119,8 @@ import layoutTheme from "./components/theme/layoutTheme";
 import formTheme from "./components/theme/helpers/formTheme";
 import linkOptions from "./components/ultilitys/linkOptions";
 import youtube from "./components/ultilitys/youtube";
+import productVaraint from "./components/ultilitys/productVariant";
+
 // Pages
 import siteInfo from "./pages/siteSettings/siteInfo";
 import siteTheme from "./pages/siteSettings/siteTheme";
@@ -130,6 +132,7 @@ import contact from "./pages/contact";
 import serviceMain from "./pages/serviceMain";
 import usecases from "./pages/usecases";
 import blog from "./pages/blog";
+import product from "./pages/templates/product";
 // Posts
 import usecasePosts from "./pages/templates/usecasePosts";
 import servicePosts from "./pages/templates/servicePosts";
@@ -167,7 +170,11 @@ import customerReviewTheme from "./pages/siteSettings/componentThemes/testimonia
 import quotesTheme from "./pages/siteSettings/componentThemes/testimonials/quotesTheme";
 // Editor Themes
 // Videos
+
+//Shop
+import productCardArray from "./pages/templates/cardArray/productCardArray";
 import videoArticleTheme from "./pages/siteSettings/componentThemes/videos/videoArticleTheme";
+import productCard from "./components/shop/cards/productCard";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -298,5 +305,10 @@ export default createSchema({
     heroMainTheme,
     notifcationBarTheme,
     pipArticleTheme,
+    productVaraint,
+    product,
+    productCardArray,
+    productCard
+    
   ]),
 });

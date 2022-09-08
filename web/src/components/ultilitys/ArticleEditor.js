@@ -24,7 +24,14 @@ import ButtonSubmit from "../articleEditor/buttons/ButtonSubmit";
 import ButtonCard from "../articleEditor/buttons/ButtonCard";
 import Video from "../articleEditor/videos/Video";
 import VideoArticle from "../articleEditor/videos/VideoArticle";
+import ProductCard from "../Shop/ProductCard";
 const Editor = styled(PortableText)`
+display: flex;
+flex-flow: column nowrap;
+/* align-items: center; */
+width: 92%;
+
+justify-content: center;
   /* Background Options */
   background: ${(props) =>
     props.customtheme.backgroundColor
@@ -47,6 +54,9 @@ const Editor = styled(PortableText)`
   li,
   p,
   span {
+    /* text-align: justify; */
+    line-height: 2em;
+
     /* Color Options */
     color: ${(props) =>
       props.customtheme.fontColor ? props.customtheme.fontColor.hex : ""};
@@ -81,6 +91,7 @@ function ArticleEditor({ data }) {
         buttonSubmit: (props) => <ButtonSubmit data={props} />,
         video: (props) => <Video data={props} />,
         videoArticle: (props) => <VideoArticle data={props} />,
+        productCardArray: (props) => <ProductCard data={props} />,
       }}
     />
   );

@@ -48,7 +48,7 @@ function BasicEditor({ data }) {
     <>
       {data.textContent ? (
         <Editor
-          customtheme={data.theme ? data.theme : "inherit"}
+          customtheme={data.theme ? data.theme : " "}
           content={data.textContent}
           serializers={{
             buttonAlt: (props) => <ButtonAlt data={props} />,

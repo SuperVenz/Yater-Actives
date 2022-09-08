@@ -59,7 +59,7 @@ const Active = styled.div`
 function MobileNav({ children, theme, active }) {
   return (
     <Wrapper>
-      <Active customtheme={theme ? theme : "inherit"} active={active}>
+      <Active customtheme={theme ? theme : ""} active={active}>
         {children}
       </Active>
     </Wrapper>

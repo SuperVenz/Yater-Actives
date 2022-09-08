@@ -62,6 +62,8 @@ export default {
         { type: "quotes" },
         { type: "video" },
         { type: "videoArticle" },
+        { type: "productCardArray" },
+
       ],
     },
   ],

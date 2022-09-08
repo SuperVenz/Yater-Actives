@@ -14,12 +14,16 @@ import PicArticleFlip from "../layoutEditor/premades/PicArticleFlip";
 import CookieConsent from "../layoutEditor/notifcations/CookieConsent";
 
 const Editor = styled(PortableText)`
+
   /* Background Options */
   background: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
       : ""};
   z-index: -2;
+  display: flex;
+flex-flow: column nowrap;
+align-items: center;
   /* Headers */
   h1,
   h2,

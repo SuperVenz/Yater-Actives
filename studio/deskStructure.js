@@ -419,4 +419,12 @@ export default () =>
             .title("Custom Pages")
             .filter('_type == "customPage"')
         ),
+        S.listItem()
+        .title("Products")
+        .child(
+          S.documentList()
+            .schemaType("product")
+            .title("Products")
+            .filter('_type == "product"')
+        ),
     ]);

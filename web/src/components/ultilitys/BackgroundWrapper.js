@@ -6,7 +6,7 @@ import { getImage } from "gatsby-plugin-image";
 import BackgroundImage from "gatsby-background-image";
 const Wrapper = styled(BackgroundImage)`
 `;
-const sanityConfig = { projectId: "j5dplla1", dataset: "production" };
+const sanityConfig = { projectId: "ox2k64am", dataset: "production" };
 // Wrap this component over whatever you want to background
 function BackgroundWrapper({ data, children }) {
   console.log(JSON.stringify(data));

@@ -5,6 +5,9 @@ import PortablePic from "../../ultilitys/PortablePic";
 import { useStaticQuery, graphql } from "gatsby";
 
 const Wrapper = styled.div`
+padding-bottom: 50px;
+padding-top: 70px;
+
   /* keep this */
   /* Font Options */
   font-size: ${(props) =>
@@ -52,12 +55,18 @@ const Wrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  line-height: 3em;
+
+  p{
+    line-height: 1.5em;
+  }
   @media only screen and (min-width: 600px) {
     flex-flow: row nowrap;
     flex-direction: ${(props) => (props.invert ? "row-reverse" : "row")};
   }
 `;
-const PicWrapper = styled.div``;
+const PicWrapper = styled.div`
+`;
 function PicArticle({ data }) {
   const sanity = useStaticQuery(graphql`
     {

@@ -4,8 +4,12 @@ import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+padding-top: 10px;`;
 const StyleLink = styled(Link)`
+border-radius: 25px;
+height: 45px;
+width: 120px;
   /* keep this */
   display: inline-flex;
   text-decoration: none;
@@ -61,6 +65,7 @@ const Arrow = styled(GatsbyImage)`
   margin-left: 8px;
 `;
 const A = styled.a`
+border-radius: 25px;
   /* keep this */
   display: inline-flex;
   text-decoration: none;

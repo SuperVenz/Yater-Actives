@@ -13,7 +13,7 @@ export const query = graphql`
       cannonicalLink
     }
     sanityIndex {
-      _rawSeo(resolveReferences: { maxDepth: 3 })
+      _rawSeo(resolveReferences: { maxDepth: 10 })
       pageData {
         _rawLayoutContent
         _rawTheme

@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 // Main Card Wrapper
 const PicCardWrapper = styled.div`
@@ -16,10 +17,10 @@ const PicCardWrapper = styled.div`
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  padding: 10px 5%;
+  width: 80%;
+  /* padding: 10px 5%; */
   margin-bottom: 20px;
-  box-shadow: 0px 4px 4px 0px #00000040;
+  /* box-shadow: 0px 4px 4px 0px #00000040; */
 
   /* keep this */
   /* Font Options */
@@ -87,10 +88,10 @@ function PicCard({ data }) {
             }
             key={i}
           >
-            <h3>{picCard.title}</h3>
             <PicWrapper>
               <PortablePic data={picCard.pic} />
             </PicWrapper>
+            <h4>{picCard.title}</h4>
             <BasicEditor data={picCard.textEditor} />
           </PicCardWrapper>
         );

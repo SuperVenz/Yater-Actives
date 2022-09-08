@@ -6,6 +6,8 @@ import Footer from "./theme/footers/Footer";
 import Header from "./theme/headers/Header";
 import Reset from "../style/Reset";
 const Css = createGlobalStyle`
+  padding-left: 5px;
+  padding-right: 15px;
 h1{
      color: ${(props) => props.theme._rawH1Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};

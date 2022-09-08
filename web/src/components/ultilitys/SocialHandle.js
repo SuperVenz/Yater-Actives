@@ -3,10 +3,12 @@ import styled from "styled-components";
 import PortablePic from "./PortablePic";
 const Wrapper = styled.div`
   margin: 10px 0px;
+
+
 `;
 const StyledLink = styled.a`
   height: 100%;
-  background-color: ;
+  /* background-color: ; */
   cursor: pointer;
 `;
 const Label = styled.p``;
