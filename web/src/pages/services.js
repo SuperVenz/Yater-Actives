@@ -13,7 +13,7 @@ export const query = graphql`
     sanitySiteInfo {
       cannonicalLink
     }
-    sanityService {
+    sanityServiceMain {
       _rawSeo(resolveReferences: { maxDepth: 3 })
       pageData {
         _rawLayoutContent
@@ -25,7 +25,7 @@ export const query = graphql`
 
 export const Head = ({ location, data }) => (
   <>
-    <title>{data.sanityService._rawSeo.title}</title>
+    <title>{data.sanityServiceMain._rawSeo.title}</title>
     <meta name="geo.region" content="US-CA" />
     <link
       href={
@@ -41,24 +41,24 @@ export const Head = ({ location, data }) => (
     <meta
       name="robots"
       content={
-        data.sanityService._rawSeo.robotTags
-          ? data.sanityService._rawSeo.robotTags
+        data.sanityServiceMain._rawSeo.robotTags
+          ? data.sanityServiceMain._rawSeo.robotTags
           : "all"
       }
     />
     <meta
       name="description"
       content={
-        data.sanityService._rawSeo.description
-          ? data.sanityService._rawSeo.description
+        data.sanityServiceMain._rawSeo.description
+          ? data.sanityServiceMain._rawSeo.description
           : ""
       }
     />
     <meta
       name="keywords"
       content={
-        data.sanityService._rawSeo.keywords
-          ? data.sanityService._rawSeo.keywords.join(",")
+        data.sanityServiceMain._rawSeo.keywords
+          ? data.sanityServiceMain._rawSeo.keywords.join(",")
           : ""
       }
     />
@@ -66,29 +66,29 @@ export const Head = ({ location, data }) => (
     <meta
       name="google-site-verification"
       content={
-        data.sanityService._rawSeo.googleVerifcation
-          ? data.sanityService._rawSeo.googleVerifcation
+        data.sanityServiceMain._rawSeo.googleVerifcation
+          ? data.sanityServiceMain._rawSeo.googleVerifcation
           : null
       }
     />
     {/* Values given in search console */}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="og:title" content={data.sanityService._rawSeo.title} />
-    <meta name="og:type" content={data.sanityService._rawSeo.ogType} />
+    <meta name="og:title" content={data.sanityServiceMain._rawSeo.title} />
+    <meta name="og:type" content={data.sanityServiceMain._rawSeo.ogType} />
     <meta name="og:url" content={location.pathname} />
     <meta
       name="og:image"
       content={
-        data.sanityService._rawSeo.ogImage
-          ? data.sanityService._rawSeo.ogImage.picData.asset.url
+        data.sanityServiceMain._rawSeo.ogImage
+          ? data.sanityServiceMain._rawSeo.ogImage.picData.asset.url
           : ""
       }
     />
     <meta
       name="og:description"
       content={
-        data.sanityService._rawSeo.description
-          ? data.sanityService._rawSeo.description
+        data.sanityServiceMain._rawSeo.description
+          ? data.sanityServiceMain._rawSeo.description
           : ""
       }
     />
