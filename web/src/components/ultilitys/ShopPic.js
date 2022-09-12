@@ -14,9 +14,12 @@ function ShopPic({ data }) {
     {},
     sanityConfig
   );
+  const hello = 'hello'
   return<div>
-  <Pic alt={data.alt} image={imageData} />;
-{JSON.stringify(data)}
+  {/* <Pic alt={data.alt} image={imageData} /> */}
+{console.log(JSON.stringify(data))}
+
+{console.log(hello)}
   </div> 
 }
 

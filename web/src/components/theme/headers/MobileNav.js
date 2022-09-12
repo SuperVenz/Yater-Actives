@@ -12,6 +12,7 @@ const Active = styled.div`
   align-items: center;
   text-align: center;
   padding-top: 24px;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   /* Background Color */

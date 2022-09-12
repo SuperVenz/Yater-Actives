@@ -62,8 +62,6 @@ const Logo = styled.div`
   justify-content: center;
   margin-right: auto;
   padding-left: 16px;
-  
-
 
 `;
 const LinkWrapper = styled.div`
@@ -71,6 +69,9 @@ const LinkWrapper = styled.div`
 `;
 const MobileLinkWrapper = styled.div`
   padding-left: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  
 `;
 const MobileIconWrapper = styled.div`
 `;
@@ -86,6 +87,8 @@ width: 50px;
 const LogoImg = styled(GatsbyImage)`  width: 100px;
   height: 100px;`
 
+const Links = styled(Link)`
+padding-top: 20px;`
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -160,9 +163,9 @@ function Header() {
         <MobileLinkWrapper>
           {data.sanityHeaderMain.links.map((link, i) => {
             return (
-              <Link to={link.link} key={i}>
+              <Links to={link.link} key={i}>
                 {link.text}
-              </Link>
+              </Links>
             );
           })}
         </MobileLinkWrapper>

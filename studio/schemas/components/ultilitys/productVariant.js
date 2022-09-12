@@ -34,7 +34,9 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'image',
+          name: "pic",
+      title: "Main Pic",
+      type: "pic",
           options: {
             hotspot: true,
           },

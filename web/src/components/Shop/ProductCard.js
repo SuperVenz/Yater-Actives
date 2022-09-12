@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import BasicEditor from "../ultilitys/BasicEditor";
-import ShopPic from "../ultilitys/ShopPic";
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 
 const Wrapper = styled.div`
@@ -71,25 +71,47 @@ const ProductCardWrapper = styled.div`
 const ProductWrapper = styled.div``;
 
 
-const ProductCard = ({data, query}) => {
+const ProductCard = ({data}) => {
   const shopData = useStaticQuery(graphql`
   query ($ref_id: String) {
     sanityProduct(_id: {eq: $ref_id}) {
-      _rawDefaultProductVariant
       _rawBody
       _rawSlug
+      defaultProductVariant {
+        images {
+          alt
+          picData {
+            asset {
+              gatsbyImageData
+            }
+          }
+        }
+      }
     }
   }
-`)
-// const href_id =data.cardArray[0].product._ref;
+`
+)
+// const ref_id =data.cardArray[0].product._ref;
+// const helloWorld = 'helloWorld'
   return (
     <Wrapper>
+      <ProductWrapper>
+      {/* {console.log(shopData.sanityProduct._rawDefaultProductVariant.images)} */}
+      {shopData.sanityProduct.defaultProductVariant.images.map((picture,i) =>{
+      
+      <GatsbyImage 
+        key={i}
+        image={picture.picData.asset.gatsbyImageData}
+        alt={picture.alt}
+        // imgStyle={{ objectFit: 'cover' }}
+       />
 
-      {shopData.sanityProduct._rawDefaultProductVariant.images.map((picture,i) =>{
-        <ShopPic data={picture}/>
+       console.log(picture.picData.asset.gatsbyImageData)
       })}
+       {/* <BasicEditor data={shopData.sanityProduct._rawBody} /> */}
 
-       <BasicEditor data={shopData._rawBody} />
+       {/* {helloWorld} */}
+       </ProductWrapper>
          </Wrapper>
   )
 }
