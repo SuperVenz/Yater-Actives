@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  
 `;
 // Main Card Wrapper
 const PicCardWrapper = styled.div`
@@ -67,7 +68,10 @@ const PicCardWrapper = styled.div`
   }
 `;
 // Wrapper for the image
-const PicWrapper = styled.div``;
+const PicWrapper = styled.div`
+
+
+`;
 function PicCard({ data }) {
   const sanity = useStaticQuery(graphql`
     {

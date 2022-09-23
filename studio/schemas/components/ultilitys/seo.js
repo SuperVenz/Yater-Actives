@@ -5,7 +5,7 @@ export default {
   fieldsets: [
     {
       name: "openGraph",
-      title: "Social Meida Info",
+      title: "Social Media Info",
       options: { collapsible: true, collapsed: true },
     },
   ],

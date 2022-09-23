@@ -3,9 +3,20 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 100px;
+
+`;
 
 const StyleLink = styled(Link)`
+border: 1px solid #000;
+border-radius: 25px;
+height: 45px;
+width: 120px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ 
   /* keep this */
   display: inline-flex;
   text-decoration: none;

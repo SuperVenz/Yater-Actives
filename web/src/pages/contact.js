@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-const Wrapper = styled(Layout)``;
+const Wrapper = styled(Layout)`
+
+`;
 function contact({ data }) {
   return <Wrapper page={data.sanityContact.pageData} />;
 }

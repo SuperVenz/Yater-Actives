@@ -4,12 +4,21 @@ import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
+const LowerHead = styled.h3`
+padding-bottom: 20px;
+font-size: 20px;
+font-weight: 500;
+`
+
 const Wrapper = styled.div`
-padding-top: 10px;`;
+padding-top: 20px;
+padding-bottom: 100px;
+`;
 const StyleLink = styled(Link)`
 border-radius: 25px;
 height: 45px;
 width: 120px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /* keep this */
   display: inline-flex;
   text-decoration: none;
@@ -124,6 +133,7 @@ function ButtonHero({ data }) {
   `);
   return (
     // Is Icon Enabled
+    <>
     <Wrapper>
       {data.isOutbound ? (
         <A
@@ -163,6 +173,8 @@ function ButtonHero({ data }) {
         </StyleLink>
       )}
     </Wrapper>
+    <LowerHead>Products for Everyone</LowerHead>
+    </>
   );
 }
 

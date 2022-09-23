@@ -18,5 +18,10 @@ export default {
       title: "Border color",
       type: "borderOptions",
     },
+    {
+      name: "hoverTheme",
+      title: "Hover Theme",
+      type: "hoverTheme",
+    },
   ],
 };

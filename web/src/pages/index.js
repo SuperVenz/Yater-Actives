@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 
-const Wrapper = styled(Layout)``;
+const Wrapper = styled(Layout)`
+`;
 function index({ data }) {
   return <Wrapper page={data.sanityIndex.pageData}></Wrapper>;
 }

@@ -50,6 +50,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allSanityProduct {
+        nodes {
+          slug {
+            current
+          }
+        }
+      }
     }
   `);
   const bioPost = path.resolve(`./src/templates/bioPost.js`);
@@ -57,6 +64,17 @@ exports.createPages = async ({ graphql, actions }) => {
   const caseStudy = path.resolve(`./src/templates/caseStudy.js`);
   const customPage = path.resolve(`./src/templates/customPage.js`);
   const servicePost = path.resolve(`./src/templates/servicePost.js`);
+  const product = path.resolve(`./src/templates/product.js`);
+
+  result.data.allSanityProduct.nodes.forEach(node => {
+  
+    createPage({
+      path: `/product/${node.slug.current}`,
+      component: product,
+      context: { current: node.slug.current},
+   
+    })
+  })
   // Services
   result.data.allSanityServicePosts.nodes.forEach((node) => {
     createPage({

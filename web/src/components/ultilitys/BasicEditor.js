@@ -6,13 +6,16 @@ import ButtonHero from "../articleEditor/buttons/ButtonHero";
 import ButtonMain from "../articleEditor/buttons/ButtonMain";
 import ButtonSubmit from "../articleEditor/buttons/ButtonSubmit";
 import ButtonCard from "../articleEditor/buttons/ButtonCard";
+import { fade } from "./keyframes";
 const Editor = styled(PortableText)`
   /* Background Options */
   background: ${(props) =>
     props.customtheme.backgroundColor
       ? `rgba(${props.customtheme.backgroundColor.rgb.r},${props.customtheme.backgroundColor.rgb.g},${props.customtheme.backgroundColor.rgb.b},${props.customtheme.backgroundColor.rgb.a})`
       : ""};
+  animation: ${fade} 3s ease-in; 
 
+  
   /* Headers */
   h1,
   h2,
@@ -22,7 +25,7 @@ const Editor = styled(PortableText)`
     /* Color Options */
     color: ${(props) =>
       props.customtheme.headerColor
-        ? props.customtheme.headerColor.hexss
+        ? props.customtheme.headerColor.hex
         : ""}!important;
   }
   /* Font */
@@ -46,10 +49,10 @@ const Editor = styled(PortableText)`
 function BasicEditor({ data }) {
   return (
     <>
-      {data.textContent ? (
+      {data ? (
         <Editor
-          customtheme={data.theme ? data.theme : " "}
-          content={data.textContent}
+          customtheme={data.theme ? data.theme : ""}
+          content={data.textContent ? data.textContent : ""}
           serializers={{
             buttonAlt: (props) => <ButtonAlt data={props} />,
             buttonCard: (props) => <ButtonCard data={props} />,

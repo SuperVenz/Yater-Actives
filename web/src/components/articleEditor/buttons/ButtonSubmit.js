@@ -3,8 +3,14 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+padding-top: 20px;
+padding-bottom: 100px;`;
 const StyleLink = styled.button`
+color: white;
+border-radius: 25px;
+height: 45px;
+width: 120px;
   /* keep this */
   display: inline-flex;
   text-decoration: none;

@@ -10,8 +10,6 @@ const Css = createGlobalStyle`
   padding-left: 5px;
   padding-right: 15px;
 h1{
-  font-weight: 700;
-  padding-bottom: 20px;
      color: ${(props) => props.theme._rawH1Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH1Theme.mobile}px`};
      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -26,8 +24,6 @@ h1{
    };
 };
 h2{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
    color: ${(props) => props.theme._rawH2Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH2Theme.mobile}px`};
 
@@ -41,8 +37,6 @@ h2{
    };
 }
 h3{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
   color: ${(props) => props.theme._rawH3Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH3Theme.mobile}px`};
 
@@ -56,8 +50,6 @@ h3{
    };
 }
 h4{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
    color: ${(props) => props.theme._rawH4Theme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawH4Theme.mobile}px`};
 
@@ -70,14 +62,7 @@ h4{
       @media only screen and (min-width: 1200px) {
    };
 }
-h5{
-  padding-bottom: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  width: 85%;
-}
 p,span{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
 color: ${(props) => props.theme._rawTextTheme.fontColor.hex};   
      font-size:${(props) => `${props.theme._rawTextTheme.mobile}px`};
 
@@ -92,7 +77,7 @@ color: ${(props) => props.theme._rawTextTheme.fontColor.hex};
   }
   /* animation: ${rgb} 1500ms ease both infinite; */
 `;
-function Layout({ page }) {
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     {
       sanitySiteTheme {
@@ -120,7 +105,7 @@ function Layout({ page }) {
       <Reset />
       <Css />
       <Header />
-      <LayoutEditor data={page} />
+      <main>{children}</main>
       <Footer />
     </ThemeProvider>
   );

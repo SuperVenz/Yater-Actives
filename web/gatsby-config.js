@@ -80,6 +80,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ["Product"],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFiles: false,
+      },
+    },
   ],
 };
-// Created by Alec Venzor :)
+// Created by Alec Venzor & enhanced by Derrick Snow :)

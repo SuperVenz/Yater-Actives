@@ -31,7 +31,23 @@ flex-flow: column nowrap;
 /* align-items: center; */
 width: 92%;
 
+
 justify-content: center;
+@media only screen and (min-width: 600px) {
+   
+  h1, h4{
+  /* font-weight: 900; */
+  padding-bottom: 10px;
+  
+}
+}
+@media only screen and (min-width: 900px) {
+   h1{
+    padding-top: 60px;
+    width: 70%;
+   }
+}
+
   /* Background Options */
   background: ${(props) =>
     props.customtheme.backgroundColor

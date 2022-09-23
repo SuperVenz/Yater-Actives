@@ -6,7 +6,8 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const Wrapper = styled.div`
 padding-bottom: 50px;
-padding-top: 70px;
+padding-top: 20px;
+
 
   /* keep this */
   /* Font Options */
@@ -39,10 +40,13 @@ padding-top: 70px;
 
   /* Tablet */
   @media only screen and (min-width: 600px) {
+    
     font-size: ${(props) =>
       props.customtheme.font
         ? `${props.customtheme.font.tablet}px`
         : ""};
+
+
   }
   /* Desktop */
   @media only screen and (min-width: 900px) {
@@ -56,16 +60,24 @@ const Content = styled.div`
   display: flex;
   flex-flow: column nowrap;
   line-height: 3em;
+ text-align: center;
 
   p{
     line-height: 1.5em;
   }
   @media only screen and (min-width: 600px) {
-    flex-flow: row nowrap;
-    flex-direction: ${(props) => (props.invert ? "row-reverse" : "row")};
+    flex-flow: column nowrap;
+    flex-direction: ${(props) => (props.invert ? "column-reverse" : "column")};
+  }
+    /* Desktop */
+    @media only screen and (min-width: 900px) {
+
   }
 `;
 const PicWrapper = styled.div`
+`;
+const PText = styled.div`
+padding-top: 50px;
 `;
 function PicArticle({ data }) {
   const sanity = useStaticQuery(graphql`
@@ -88,7 +100,9 @@ function PicArticle({ data }) {
         <PicWrapper>
           <PortablePic data={data.pic} />
         </PicWrapper>
+        <PText>
         <BasicEditor data={data.textEditor} />
+        </PText>
       </Content>
     </Wrapper>
   );

@@ -16,7 +16,7 @@ function HeroAlt({ data }) {
       customtheme={data.theme ? data.theme : ""}
       data={data.backgroundPic}
     >
-      <BasicEditor data={data.textEditor} />
+      <BasicEditor data={data.textEditor ? data.textEditor :""} />
     </Wrapper>
   );
 }

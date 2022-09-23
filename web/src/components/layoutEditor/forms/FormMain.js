@@ -5,9 +5,23 @@ import { navigate } from "gatsby";
 import BasicEditor from "../../ultilitys/BasicEditor";
 import BackgroundWrapper from "../../ultilitys/BackgroundWrapper";
 import ButtonSubmit from "../../articleEditor/buttons/ButtonSubmit";
-const Wrapper = styled(BackgroundWrapper)``;
+
+const Con = styled.div`
+display: flex;
+justify-content: center;
+`
+
+const Wrapper = styled.div`
+width: 90%;
+padding-top: 20px;
+padding-bottom: 20px;
+text-align: center;
+
+
+`;
 // Form Wrapper
 const FormWrapper = styled.form`
+
   /* Background Color */
   background-color: ${(props) =>
     props.customtheme.backgroundColor
@@ -20,6 +34,7 @@ const FormWrapper = styled.form`
       : ""};
 `;
 const Label = styled.label`
+
   /* Font Options */
   font-size: ${(props) =>
     props.customtheme.font ? `${props.customtheme.font.mobile}px` : ""};
@@ -41,6 +56,9 @@ const Label = styled.label`
   }
 `;
 const Input = styled.input`
+  height: 40px;
+  width: 200px;
+
   /* Font Options */
   font-size: ${(props) =>
     props.customtheme.fontLabel
@@ -76,6 +94,7 @@ const Input = styled.input`
   }
 `;
 const Textarea = styled.textarea`
+ width: 200px;
   /* Font Options */
   font-size: ${(props) =>
     props.customtheme.fontLabel
@@ -143,8 +162,10 @@ function FormMain({ data }) {
   };
 
   return (
-    <Wrapper data={data.pic}>
+    
+    <Wrapper>
       <BasicEditor data={data.textEditor} />
+      <Con>
       <FormWrapper customtheme={data.theme ? data.theme : ""}>
         <input name="contact" value="Netlify Rocks" type="hidden" />
         <input type="hidden" name="bot-field" />
@@ -215,7 +236,9 @@ function FormMain({ data }) {
           data={data.button}
         />
       </FormWrapper>
+      </Con>
     </Wrapper>
+    
   );
 }
 

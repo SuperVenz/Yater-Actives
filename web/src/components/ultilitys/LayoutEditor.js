@@ -24,6 +24,13 @@ const Editor = styled(PortableText)`
   display: flex;
 flex-flow: column nowrap;
 align-items: center;
+
+@media only screen and (min-width: 600px) {
+   
+  width: 80%;
+margin-left: auto;
+margin-right: auto;
+    }
   /* Headers */
   h1,
   h2,
@@ -53,7 +60,7 @@ function LayoutEditor({ data }) {
         customtheme={data._rawTheme ? data._rawTheme : ""}
         projectId="ox2k64am"
         dataset="production"
-        content={data._rawLayoutContent}
+        content={data._rawLayoutContent ? data._rawLayoutContent : ""}
         serializers={{
           editor: (props) => <ArticleEditor data={props} />,
           heroBanner: (props) => <HeroBanner data={props} />,

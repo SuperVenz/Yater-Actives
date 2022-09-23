@@ -9,5 +9,10 @@ export default {
             type: 'reference',
             to: [{ type: 'product' }],
         },
+        {
+            name: 'textEditor',
+            title: 'textEditor',
+            type: 'basicEditor',
+        },
     ],
 }

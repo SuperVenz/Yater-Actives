@@ -26,7 +26,7 @@ function SocialHandle({ data }) {
             {socialHandle.icon ? (
               <PortablePic data={socialHandle.icon} />
             ) : null}
-            <Label>{socialHandle.label ? socialHandle.label : ""}</Label>
+          {socialHandle.label ?   <Label>{ socialHandle.label} </Label> : ""}
           </StyledLink>
         );
       })}
