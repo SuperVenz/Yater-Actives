@@ -6,6 +6,8 @@ import Footer from "./theme/footers/Footer";
 import Header from "./theme/headers/Header";
 import Reset from "../style/Reset";
 import { rgb } from "./ultilitys/keyframes";
+import { CartProvider } from 'use-shopping-cart'
+
 const Css = createGlobalStyle`
   padding-left: 5px;
   padding-right: 15px;
@@ -110,6 +112,16 @@ function Layout({ page }) {
     }
   `);
   return (
+    <CartProvider
+    mode="payment"
+    cartMode="client-only"
+    stripe={process.env.STRIPE_PUBLISHABLE_KEY}
+    successUrl="stripe.com"
+    cancelUrl="twitter.com/dayhaysoos"
+    currency="USD"
+    allowedCountries={['US', 'GB', 'CA']}
+    billingAddressCollection={true}
+  >
     <ThemeProvider
       theme={
         data.sanitySiteTheme.siteTheme
@@ -123,6 +135,8 @@ function Layout({ page }) {
       <LayoutEditor data={page} />
       <Footer />
     </ThemeProvider>
+    </CartProvider>
+
   );
 }
 
